@@ -1,0 +1,25 @@
+//
+//  ${info['fileName']}.swift
+//  ${info['projectName']}
+//
+//  Created by ${info['creator']} on ${info['date']}.
+//  Copyright © ${info['copyrightYear']} ${info['copyrightOwner']}. All rights reserved.
+//
+
+import UIKit
+
+class ${className}: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+
+    }
+
+%for property in propertyList:
+    lazy var ${property['name']}: ${property['type']} = {
+        let ${property['name']} = ${property['type']}()
+        return ${property['name']}
+    }()
+
+%end
+}

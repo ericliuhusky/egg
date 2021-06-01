@@ -1,0 +1,22 @@
+{
+    "template": "UIViewController",
+    "info": {
+        "fileName": "TestFile",
+        "projectName": "TestProject",
+        "creator": "me",
+        "date": "2021/6/1",
+        "copyrightYear": "2021",
+        "copyrightOwner": "me"
+    },
+    "className": "TestClass",
+    "propertyList": [
+        {
+            "name": "propertyName",
+            "type": "propertyType"
+        },
+        {
+            "name": "imageView",
+            "type": "UIImageView"
+        }
+    ]
+}

@@ -1,0 +1,85 @@
+#!/usr/bin/env python3
+
+# 添加项目路径到系统path，防止同级模块寻找`No module named core`
+import sys, os
+FILE_PATH = os.path.abspath(__file__)
+DIRECTORY_PATH = os.path.dirname(FILE_PATH)
+PROJECT_PATH = os.path.dirname(DIRECTORY_PATH)
+sys.path.append(PROJECT_PATH)
+
+
+from core import egg
+import argparse
+
+
+def main():
+    parser = argparse.ArgumentParser(
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        description='Generate Your Boilerplate!', epilog='''
+    A EGG json config template consists of the following elements:
+
+      - Template name
+
+      - Information of the code file
+
+      - Class name
+
+      - PropertyList
+
+
+    Example template:
+
+         {
+            "template": "UIViewController",
+            "info": {
+                "fileName": "TestFile",
+                "projectName": "TestProject",
+                "creator": "me",
+                "date": "2021/6/1",
+                "copyrightYear": "2021",
+                "copyrightOwner": "me"
+            },
+            "className": "TestClass",
+            "propertyList": [
+                {
+                    "name": "propertyName",
+                    "type": "propertyType"
+                },
+                {
+                    "name": "imageView",
+                    "type": "UIImageView"
+                }
+            ]
+        }
+'''
+    )
+
+    parser.add_argument(
+        'file', type=str,
+        help='Path to EGG template file', nargs='?',
+        default='-')
+    parser.add_argument(
+        '-o', dest='target', type=str,
+        help='Output file', default='-')
+
+    args = parser.parse_args(sys.argv[1:])
+
+    ast = None
+    jsondict = None
+
+    if args.file == '-':
+        try:
+            ast, jsondict = egg.read_and_parse('config.json')
+        except:
+            print('mast have a json config template file')
+    else:
+        ast, jsondict = egg.read_and_parse(args.file)
+
+    if args.target == '-':
+        egg.parse_and_write('out.swift', ast, jsondict)
+        print('succeed to generate your boilerplate at out.swift')
+    else:
+        egg.parse_and_write(args.target, ast, jsondict)
+        print('succeed to generate your boilerplate')
+
+main()
