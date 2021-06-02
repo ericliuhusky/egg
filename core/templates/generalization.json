@@ -1,0 +1,180 @@
+{
+    "description": [
+        {
+            "NAME": "template",
+            "TYPE": "String",
+            "VALUE": "generalization"
+        },
+        {
+            "NAME": "info",
+            "TYPE": "Object",
+            "VALUE": [
+                {
+                    "NAME": "fileName",
+                    "TYPE": "String",
+                    "VALUE": ""
+                },
+                {
+                    "NAME": "projectName",
+                    "TYPE": "String",
+                    "VALUE": ""
+                },
+                {
+                    "NAME": "creator",
+                    "TYPE": "String",
+                    "VALUE": ""
+                },
+                {
+                    "NAME": "date",
+                    "TYPE": "String",
+                    "VALUE": ""
+                },
+                {
+                    "NAME": "copyrightYear",
+                    "TYPE": "String",
+                    "VALUE": ""
+                },
+                {
+                    "NAME": "copyrightOwner",
+                    "TYPE": "String",
+                    "VALUE": ""
+                }
+            ]
+        },
+        {
+            "NAME": "packageList",
+            "TYPE": "Array",
+            "VALUE": "" 
+        },
+        {
+            "NAME": "blockType",
+            "TYPE": "String",
+            "VALUE": ""
+        },
+        {
+            "NAME": "blockName",
+            "TYPE": "String",
+            "VALUE": ""
+        },
+        {
+            "NAME": "inheritance",
+            "TYPE": "String",
+            "VALUE": ""
+        },
+        {
+            "NAME": "propertyList",
+            "TYPE": "Array",
+            "VALUE": [
+                {
+                    "NAME": "name",
+                    "TYPE": "String",
+                    "VALUE": ""
+                },
+                {
+                    "NAME": "type",
+                    "TYPE": "String",
+                    "VALUE": ""
+                }
+            ]
+        },
+        {
+            "NAME": "methodList",
+            "TYPE": "Array",
+            "VALUE": [
+                {
+                    "NAME": "name",
+                    "TYPE": "String",
+                    "VALUE": ""
+                },
+                {
+                    "NAME": "parameterList",
+                    "TYPE": "Array",
+                    "VALUE": [
+                        {
+                            "NAME": "name",
+                            "TYPE": "String",
+                            "VALUE": ""
+                        },
+                        {
+                            "NAME": "type",
+                            "TYPE": "String",
+                            "VALUE": ""
+                        }
+                    ]
+                },
+                {
+                    "NAME": "returnType",
+                    "TYPE": "String",
+                    "VALUE": ""
+                },
+            ]
+        },
+        {
+            "NAME": "extensionProtocalList",
+            "TYPE": "Array",
+            "VALUE": ""
+        }
+    ],
+    "sample": {
+        "template": "generalization",
+        "info": {
+            "fileName": "TestFile",
+            "projectName": "TestProject",
+            "creator": "me",
+            "date": "2021/6/1",
+            "copyrightYear": "2021",
+            "copyrightOwner": "me"
+        },
+        "packageList": [
+            "UIKit",
+            "a"
+        ],
+        "blockType": "class",
+        "blockName": "TestClass",
+        "inheritance": "asd",
+        "propertyList": [
+            {
+                "name": "propertyName",
+                "type": "propertyType"
+            },
+            {
+                "name": "imageView",
+                "type": "UIImageView"
+            }
+        ],
+        "methodList": [
+            {
+                "name": "methodName1",
+                "parameterList": [
+                    {
+                        "name": "p1",
+                        "type": "Int"
+                    },
+                    {
+                        "name": "p2",
+                        "type": "String"
+                    }
+                ],
+                "returnType": "Int"
+            },
+            {
+                "name": "methodName2",
+                "parameterList": [
+                    {
+                        "name": "p1",
+                        "type": "Int"
+                    },
+                    {
+                        "name": "p2",
+                        "type": "String"
+                    }
+                ],
+                "returnType": "String"
+            }
+        ],
+        "extensionProtocalList": [
+            "ADelegate",
+            "BDe"
+        ]
+    }    
+}

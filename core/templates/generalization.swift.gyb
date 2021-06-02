@@ -1,0 +1,53 @@
+%if info:
+//
+//  ${info['fileName']}.swift
+//  ${info['projectName']}
+//
+//  Created by ${info['creator']} on ${info['date']}.
+//  Copyright © ${info['copyrightYear']} ${info['copyrightOwner']}. All rights reserved.
+//
+%end
+
+%for package in packageList:
+import ${package}
+%end
+
+%{
+    def get_parameters(parameterList):
+        return ','.join(map(lambda x: ' {}: {}'.format(x['name'], x['type']), parameterList))[1:]
+}%
+
+${blockType} ${blockName}${': {}'.format(inheritance) if inheritance else ''} {
+
+    %for property in propertyList:
+    var ${property['name']}: ${property['type']}
+
+    %end
+
+    init(${get_parameters(propertyList)}) {
+        %for property in propertyList:
+        self.${property['name']} = ${property['name']}
+        %end
+
+        %if inheritance:
+        super.init()
+        %end
+    }
+
+
+    %for method in methodList:
+    func ${method['name']}(${get_parameters(method['parameterList'])})${' -> {}'.format(method['returnType']) if method['returnType'] else ''} {
+
+    }
+
+    %end
+
+}
+
+
+%for extensionProtocal in extensionProtocalList:
+extension ${blockName}: ${extensionProtocal} {
+
+}
+
+%end
